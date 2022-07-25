@@ -30,6 +30,9 @@ def go(args):
     idx = df['price'].between(price_min, price_max)
     df = df[idx].copy()
 
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx].copy()
+
     logger.info("Saving the clean data")
     df.to_csv("clean_data.csv", index=False)
 
