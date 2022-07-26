@@ -13,6 +13,13 @@ logger = logging.getLogger()
 
 
 def go(args):
+    """
+    Download data from W&B and clean the downloaded data
+    argument:
+        args : command line argument to download the data and cleaning parameters
+    return:
+        None
+    """
 
     run = wandb.init(job_type="basic_cleaning")
     run.config.update(args)
